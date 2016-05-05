@@ -51,4 +51,6 @@ CREATE TABLE students
   image VARCHAR(255),
   isUse INT NOT NULL DEFAULT 1,
   FOREIGN KEY (classId) REFERENCES classes(id)
-)
+);
+
+INSERT INTO admins (adminName, adminPassword) VALUES (1,1);

@@ -21,11 +21,11 @@
                     <?php
                         if(isset($_SESSION["userName"]))
                         {
-                            echo '<a type="button" class="btn btn-primary navbar-btn" href="register.html">头像</a>';
+                            echo '<a type="button" class="btn btn-primary navbar-btn" href="register.php">头像</a>';
                         }
                         else
                         {
-                            echo '<a type="button" class="btn btn-primary navbar-btn" href="register.html">注册</a>';
+                            echo '<a type="button" class="btn btn-primary navbar-btn" href="register.php">注册</a>';
                         }
                     ?>
                 </ul>

@@ -23,31 +23,17 @@ session_start();
 
 </head>
 <body>
-    <?php  include "navi.php"; ?>
+    <?php  include "navi.php";?>
+    <?php
+        if(!isset($_SESSION["userName"])){
+            $url = 'login.php';
+            echo "<script language='javascript'>";
+            echo "location.href='$url'";
+            echo "</script>";
+        }
 
-    
-    <div class="container">
 
-        <form class="form-signin">
-            <h2 class="form-signin-heading">请登陆</h2>
-            <label for="userName" class="sr-only">用户名</label>
-            <input type="email" id="userName" class="form-control" placeholder="用户名" required autofocus>
-            <label for="password" class="sr-only">密码</label>
-            <input type="password" id="password" class="form-control" placeholder="密码" required>
-            <div class="radio">
-                <label>
-                    <input type="radio" name="isManager" id="isManager" value="1" checked>
-                    校友
-                </label>
-                <label>
-                    <input type="radio" name="isManager" id="isManager" value="0">
-                    管理员
-                </label>
-            </div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-        </form>
-    </div> <!-- /container -->
-
+    ?>
 
 
 
