@@ -31,8 +31,6 @@ session_start();
             echo "location.href='$url'";
             echo "</script>";
         }
-
-
     ?>
 
 

@@ -25,38 +25,35 @@ session_start();
 <body>
 <?php  include "navi.php"; ?>
 
+    <div class="container">
+    
+        <form class="form-signin" action="loginDeal.php" method="post">
+            <h2 class="form-signin-heading">请登陆</h2>
+            <label for="userName" class="sr-only">用户名</label>
+            <input type="text" id="userName" name="userName" class="form-control" placeholder="用户名" required autofocus>
+            <label for="password" class="sr-only">密码</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="密码" required>
+            <div class="radio">
+                <label>
+                    <input type="radio" name="isAdmin" id="isAdmin" value="1" checked>
+                    校友
+                </label>
+                <label>
+                    <input type="radio" name="isAdmin" id="isAdmin" value="0">
+                    管理员
+                </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">登陆</button>
+        </form>
+    </div> <!-- /container -->
+    
+    
+    
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
 
-
-
-
-<div class="container">
-
-    <form class="form-signin" action="loginDeal.php" method="post">
-        <h2 class="form-signin-heading">请登陆</h2>
-        <label for="userName" class="sr-only">用户名</label>
-        <input type="text" id="userName" name="userName" class="form-control" placeholder="用户名" required autofocus>
-        <label for="password" class="sr-only">密码</label>
-        <input type="password" id="password" name="password" class="form-control" placeholder="密码" required>
-        <div class="radio">
-            <label>
-                <input type="radio" name="isAdmin" id="isAdmin" value="1" checked>
-                校友
-            </label>
-            <label>
-                <input type="radio" name="isAdmin" id="isAdmin" value="0">
-                管理员
-            </label>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">登陆</button>
-    </form>
-</div> <!-- /container -->
-
-
-
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
