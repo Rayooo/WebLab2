@@ -21,6 +21,7 @@
                     <?php
                         if(isset($_SESSION["userName"]))
                         {
+                            echo '<a type="button" class="btn btn-primary navbar-btn" href="#">'.$_SESSION["userName"].'</a>';
                             echo '<a type="button" class="btn btn-primary navbar-btn" href="logout.php">退出</a>';
                         }
                         else

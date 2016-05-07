@@ -20,6 +20,7 @@
 
     if($isAdmin == 1){
         $sql = "SELECT * FROM admins WHERE adminName=$userName AND adminPassword=$password AND isUse=1";
+        $result = $connection->query($sql);
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){
                 $_SESSION["userName"] = $row["adminName"];
@@ -33,6 +34,7 @@
     }
     else{
         $sql = "SELECT * FROM students WHERE userName=$userName AND userPassword=$password AND isUse=1";
+        $result = $connection->query($sql);
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){
                 $_SESSION["userName"] = $row["userName"];
@@ -47,7 +49,7 @@
     }
 
 
-    $result = $connection->query($sql);
+
 
 
     $result->free();
