@@ -25,6 +25,7 @@
             while($row = $result->fetch_assoc()){
                 $_SESSION["userName"] = $row["adminName"];
                 $_SESSION["id"] = $row["id"];
+                $_SESSION["isAdmin"] = "true";
             }
             $url = 'index.php';
             echo "<script language='javascript'>";
@@ -40,6 +41,7 @@
                 $_SESSION["userName"] = $row["userName"];
                 $_SESSION["id"] = $row["id"];
                 $_SESSION["realName"] = $row["realName"];
+                $_SESSION["isAdmin"] = "false";
             }
             $url = 'index.php';
             echo "<script language='javascript'>";

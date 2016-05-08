@@ -33,6 +33,35 @@ session_start();
         }
     ?>
 
+    <?php
+        include "connectDB.php";
+        $sql = "SELECT * FROM students";
+        $result = $connection->query($sql);
+        echo "<div class='container'>";
+        echo " <table class= 'table table-striped table-bordered table-hover'> ";
+        if($result->num_rows > 0){
+            while($row = $result->fetch_assoc()){
+                echo "<tr>";
+                echo "<td>".$row["id"]."</td>";
+                echo "<td>".$row["userName"]."</td>";
+                echo "<td>".$row["realName"]."</td>";
+                echo "<td>".$row["cardNo"]."</td>";
+                echo "<td>".$row["business"]."</td>";
+                echo "<td>".$row["enterYear"]."</td>";
+                echo "<td>".$row["mobile"]."</td>";
+                echo "<td>".$row["address"]."</td>";
+                echo "<td>".$row["zipcode"]."</td>";
+                echo "<td>".$row["image"]."</td>";
+                echo "<td>".$row["isUse"]."</td>";
+                echo "</tr>";
+            }
+        }
+        echo "</table>";
+    echo "</div>";
+    ?>
+
+
+
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
