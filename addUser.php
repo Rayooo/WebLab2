@@ -5,7 +5,8 @@
  * Date: 16/5/8
  * Time: 18:30
  */
-session_start()
+session_start();
+$_SESSION["location"] = "addUser";
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -31,6 +32,9 @@ session_start()
         echo "<script language='javascript'>";
         echo "location.href='$url'";
         echo "</script>";
+    }
+    else{
+
     }
     ?>
 

@@ -6,6 +6,7 @@
  * Time: 17:43
  */
 session_start();
+$_SESSION["location"] = "index";
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
