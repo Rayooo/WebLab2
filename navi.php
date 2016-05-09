@@ -2,7 +2,7 @@
 <!--User: Ray-->
 <!--Date: 16/5/5-->
 <!--Time: 17:43-->
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-default">
     <div class="container">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -21,8 +21,11 @@
                     <?php
                         if(isset($_SESSION["userName"]))
                         {
-                            echo '<a type="button" class="btn btn-primary navbar-btn" href="#">'.$_SESSION["userName"].'</a>';
+//                            echo '<a type="button" class="btn btn-primary navbar-btn" href="#">'.$_SESSION["userName"].'</a>';
                             echo '<a type="button" class="btn btn-primary navbar-btn" href="logout.php">退出</a>';
+                            echo '<li class="active"><a href="index.php">主页</a></li>';
+                            echo '<li><a href="addUser.php">新增</a></li>';
+                            echo '<li><a href="#">查询</a></li>';
                         }
                         else
                         {

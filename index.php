@@ -25,6 +25,7 @@ session_start();
 <body>
     <?php  include "navi.php";?>
     <?php
+    //    如果没有登陆,跳转
         if(!isset($_SESSION["userName"])){
             $url = 'login.php';
             echo "<script language='javascript'>";
