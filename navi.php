@@ -26,7 +26,6 @@
                         if(isset($_SESSION["userName"]))
                         {
                     ?>
-                    
                             <a type="button" class="btn btn-primary navbar-btn" href="logout.php">退出</a>
                             <li class = "naviButton" v-bind:class="{ 'active': isIndex }"><a href="index.php">主页</a></li>
                             <li class = "naviButton" v-bind:class="{ 'active': isAddUser }"><a href="addUser.php">新增</a></li>
@@ -44,13 +43,9 @@
                                             isQuery: $isQuery
                                         }
                                     });
-                                </script>
-                            "
-                        ?>
-                    <?php
+                                </script>";
                         }
-                        else
-                        {
+                        else {
                             echo '<a type="button" class="btn btn-primary navbar-btn" href="register.php">注册</a>';
                         }
                     ?>

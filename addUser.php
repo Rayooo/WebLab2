@@ -33,9 +33,6 @@ $_SESSION["location"] = "addUser";
         echo "location.href='$url'";
         echo "</script>";
     }
-    else{
-
-    }
     ?>
 
     <div class="container">
@@ -55,7 +52,7 @@ $_SESSION["location"] = "addUser";
                     <select name="enterYear" class="form-control" required>
                         <?php
                             echo "<option value=''>请选择入学年份</option>";
-                            for($i = 1900;$i < 2200;++$i){
+                            for($i = 1900;$i <= date("Y");++$i){
                                 echo "<option value='$i'>$i</option>";
                             }
                         ?>
@@ -83,9 +80,13 @@ $_SESSION["location"] = "addUser";
                            <input type="file" name="image" id="uploadImage" required>
                         </div>
                 </div>
+                </div>
             </div>
         </form>
     </div>
+
+    <?php include "footer.php"?>
+
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>

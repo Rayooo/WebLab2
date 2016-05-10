@@ -35,35 +35,51 @@ $_SESSION["location"] = "index";
         }
     ?>
 
+    <div class='container text-center'>
+        <table class= 'table table-striped table-bordered table-hover'>
     <?php
         include "connectDB.php";
-        $sql = "SELECT * FROM students";
+        $sql = "SELECT *,students.id AS studentId FROM students JOIN classes ON (students.classId = classes.id);";
         $result = $connection->query($sql);
-        echo "<div class='container'>";
-        echo " <table class= 'table table-striped table-bordered table-hover'> ";
         if($result->num_rows > 0){
+            echo "<tr>
+                    <td>ID</td>
+                    <td>姓名</td>
+                    <td>身份证号</td>
+                    <td>入学年月</td>
+                    <td>班级</td>
+                    <td>手机</td>
+                    <td>操作</td>
+                    </tr>";
             while($row = $result->fetch_assoc()){
                 echo "<tr>";
-                echo "<td>".$row["id"]."</td>";
-                echo "<td>".$row["userName"]."</td>";
+                echo "<td>".$row["studentId"]."</td>";
+//                echo "<td>".$row["userName"]."</td>";
                 echo "<td>".$row["realName"]."</td>";
                 echo "<td>".$row["cardNo"]."</td>";
-                echo "<td>".$row["business"]."</td>";
+//                echo "<td>".$row["business"]."</td>";
                 echo "<td>".$row["enterYear"]."</td>";
                 echo "<td>".$row["mobile"]."</td>";
-                echo "<td>".$row["address"]."</td>";
-                echo "<td>".$row["zipcode"]."</td>";
-                echo "<td>".$row["image"]."</td>";
-                echo "<td>".$row["isUse"]."</td>";
+                echo "<td>".$row["className"]."</td>";
+                echo "<td>
+                        <a href='#' class='editButton'><i class='fa fa-info' aria-hidden='true'></i></a>
+                        <a href='#' class='editButton'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>
+                        <a href='#' class='editButton'><i class='fa fa-trash-o' aria-hidden='true'></i></a>
+                      </td>";
+//                echo "<td>".$row["address"]."</td>";
+//                echo "<td>".$row["zipcode"]."</td>";
+//                echo "<td>".$row["image"]."</td>";
+//                echo "<td>".$row["isUse"]."</td>";
                 echo "</tr>";
             }
         }
-        echo "</table>";
-    echo "</div>";
     ?>
+       </table>
+    </div>
 
 
 
+    <?php include "footer.php"?>
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

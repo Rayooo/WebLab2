@@ -36,3 +36,8 @@
 .form-signin-heading{
     text-align: center;
 }
+
+.editButton{
+    margin-left: 5px;
+    margin-right: 5px;
+}
