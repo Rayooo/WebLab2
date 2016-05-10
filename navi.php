@@ -26,10 +26,10 @@
                         if(isset($_SESSION["userName"]))
                         {
                     ?>
-                            <a type="button" class="btn btn-primary navbar-btn" href="logout.php">退出</a>
+                            <a type="button" class="btn btn-primary navbar-btn" href="logout.php" style="margin-left: 10px">退出</a>
                             <li class = "naviButton" v-bind:class="{ 'active': isIndex }"><a href="index.php">主页</a></li>
                             <li class = "naviButton" v-bind:class="{ 'active': isAddUser }"><a href="addUser.php">新增</a></li>
-                            <li class = "naviButton" v-bind:class="{ 'active': isQuery }"><a href="addUser.php">查询</a></li>
+                            <li class = "naviButton" v-bind:class="{ 'active': isQuery }"><a href="query.php">查询</a></li>
                             <?php
                             $isIndex = "index"==$_SESSION["location"]? "true":"false";
                             $isAddUser = "addUser" == $_SESSION["location"]? "true":"false";
