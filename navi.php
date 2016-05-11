@@ -45,8 +45,11 @@
                                     });
                                 </script>";
                         }
-                        else {
+                        else if($_SESSION["location"] == "login") {
                             echo '<a type="button" class="btn btn-primary navbar-btn" href="register.php">注册</a>';
+                        }
+                        else if($_SESSION["location"] == "register"){
+                            echo '<a type="button" class="btn btn-primary navbar-btn" href="index.php">登陆</a>';
                         }
                     ?>
                 </ul>

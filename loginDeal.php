@@ -27,10 +27,9 @@
                 $_SESSION["id"] = $row["id"];
                 $_SESSION["isAdmin"] = "true";
             }
-            $url = 'index.php';
-            echo "<script language='javascript'>";
-            echo "location.href='$url'";
-            echo "</script>";
+        }
+        else{
+            $_SESSION["error"] = "账户名密码错误";
         }
     }
     else{
@@ -43,13 +42,15 @@
                 $_SESSION["realName"] = $row["realName"];
                 $_SESSION["isAdmin"] = "false";
             }
-            $url = 'index.php';
-            echo "<script language='javascript'>";
-            echo "location.href='$url'";
-            echo "</script>";
+        }
+        else{
+            $_SESSION["error"] = "账户名密码错误";
         }
     }
-
+    $url = 'index.php';
+    echo "<script language='javascript'>";
+    echo "location.href='$url'";
+    echo "</script>";
 
 
 

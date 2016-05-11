@@ -6,6 +6,7 @@
  * Time: 17:43
  */
 session_start();
+$_SESSION["location"] = "login";
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -19,7 +20,7 @@ session_start();
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="css/index.css" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet">
 
 </head>
 <body>
@@ -29,6 +30,14 @@ session_start();
     
         <form class="form-signin" action="loginDeal.php" method="post">
             <h2 class="form-signin-heading">请登陆</h2>
+
+            <?php
+                if(isset($_SESSION["error"])){
+                    echo "<div id='error' class='container alert alert-danger text-center form-control' role='alert'>账号密码错误</div>";
+
+                }
+            ?>
+
             <label for="userName" class="sr-only">用户名</label>
             <input type="text" id="userName" name="userName" class="form-control" placeholder="用户名" required autofocus>
             <label for="password" class="sr-only">密码</label>
@@ -36,11 +45,11 @@ session_start();
             <div class="radio">
                 <label>
                     <input type="radio" name="isAdmin" id="isAdmin" value="1" checked>
-                    校友
+                    管理员
                 </label>
                 <label>
                     <input type="radio" name="isAdmin" id="isAdmin" value="0">
-                    管理员
+                    校友
                 </label>
             </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit">登陆</button>

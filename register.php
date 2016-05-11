@@ -5,7 +5,8 @@
  * Date: 16/5/5
  * Time: 19:38
  */
-session_start()
+session_start();
+$_SESSION["location"] = "register";
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -26,20 +27,16 @@ session_start()
 
 <div class="container">
 
-    <form class="form-signin">
+    <form class="form-signin" action="registerDeal.php" method="post">
         <h2 class="form-signin-heading">欢迎加入我们</h2>
         <label for="userName" class="sr-only">用户名</label>
-        <input type="text" id="userName" class="form-control" placeholder="用户名" required autofocus>
+        <input type="text" id="userName" class="form-control" name="userName" placeholder="用户名" required autofocus>
         <label for="password" class="sr-only">密码</label>
-        <input type="password" id="password" class="form-control" placeholder="密码" required>
+        <input type="password" id="password" class="form-control" name="password" placeholder="密码" required>
         <div class="radio">
             <label>
                 <input type="radio" name="isManager" id="isManager" value="1" checked>
-                校友
-            </label>
-            <label>
-                <input type="radio" name="isManager" id="isManager" value="0">
-                管理员
+                管理员(现在只能注册管理员)
             </label>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit">注册</button>
