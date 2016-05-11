@@ -71,7 +71,7 @@ $_SESSION["location"] = "addUser";
                         ?>
                     </select>
                     <button class="btn btn-lg btn-primary btn-block" type="submit">确定</button>
-                </div> <!-- /container -->
+                </div> 
 
                 <div class="col-md-6">
                     <div class="thumbnail">

@@ -47,13 +47,14 @@ $_SESSION["location"] = "index";
                     <td>姓名</td>
                     <td>身份证号</td>
                     <td>入学年月</td>
-                    <td>班级</td>
                     <td>手机</td>
+                    <td>班级</td>
                     <td>操作</td>
                     </tr>";
             while($row = $result->fetch_assoc()){
                 echo "<tr>";
                 echo "<td>".$row["studentId"]."</td>";
+                $studentId = $row["studentId"];
 //                echo "<td>".$row["userName"]."</td>";
                 echo "<td>".$row["realName"]."</td>";
                 echo "<td>".$row["cardNo"]."</td>";
@@ -62,9 +63,9 @@ $_SESSION["location"] = "index";
                 echo "<td>".$row["mobile"]."</td>";
                 echo "<td>".$row["className"]."</td>";
                 echo "<td>
-                        <a href='#' class='editButton'><i class='fa fa-info' aria-hidden='true'></i></a>
-                        <a href='#' class='editButton'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>
-                        <a href='#' class='editButton'><i class='fa fa-trash-o' aria-hidden='true'></i></a>
+                        <a href='studentInfo.php?studentId=$studentId' class='editButton'><i class='fa fa-info' aria-hidden='true'></i></a>
+                        <a href='editInfo.php?studentId=$studentId' class='editButton'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>
+                        <a href='deleteInfo.php?studentId=$studentId' class='editButton'><i class='fa fa-trash-o' aria-hidden='true'></i></a>
                       </td>";
 //                echo "<td>".$row["address"]."</td>";
 //                echo "<td>".$row["zipcode"]."</td>";

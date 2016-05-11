@@ -25,7 +25,15 @@ $_SESSION["location"] = "login";
 </head>
 <body>
 <?php  include "navi.php"; ?>
-
+<?php
+//    如果没有登陆,跳转
+if(isset($_SESSION["userName"])){
+    $url = 'index.php';
+    echo "<script language='javascript'>";
+    echo "location.href='$url'";
+    echo "</script>";
+}
+?>
     <div class="container">
     
         <form class="form-signin" action="loginDeal.php" method="post">
