@@ -35,3 +35,8 @@ h2{
 .thumbnail{
     margin-top: 20%;
 }
+
+.control-label{
+    margin-top: 4%;
+    font-size: larger;
+}
