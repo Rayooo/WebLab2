@@ -37,29 +37,59 @@ $_SESSION["location"] = "query";
             <div class="col-lg-12">
                 <div class="input-group">
                     <!--显示原来输入的值-->
-                    <input type="text" class="form-control" name="condition" placeholder="Search for..." value="<?php echo $searchText = isset($_REQUEST["condition"])?  $_REQUEST["condition"]:""; ?>">
+                    <input type="text" class="form-control" name="condition" placeholder="请输入查询条件" value="<?php echo $searchText = isset($_REQUEST["condition"])?  $_REQUEST["condition"]:""; ?>">
                     <span class="input-group-btn">
-                        <button class="btn btn-default" type="submit">Go!</button>
+                        <button class="btn btn-default" type="submit">查询</button>
                     </span>
                 </div>
                 <div class="input-group">
-                    <label>
-                        <input type="radio" name="searchOption" value="realName" checked>
-                        姓名
-                    </label>
-                    <label>
-                        <input type="radio" name="searchOption" value="enterYear">
-                        入学年份
-                    </label>
-                    <label>
-                        <input type="radio" name="searchOption" value="className">
-                        班级
-                    </label>
+                    <?php $option = isset($_REQUEST["searchOption"])? $_REQUEST["searchOption"]:"realName";
+//                        这里代码太垃圾了,Vue用的话有延迟卡
+                        if($option == "realName"){
+                            echo "<label>
+                                    <input type=\"radio\" name=\"searchOption\" value=\"realName\" checked>
+                                    姓名
+                                    </label>
+                                    <label>
+                                        <input type=\"radio\" name=\"searchOption\" value=\"enterYear\">
+                                        入学年份
+                                    </label>
+                                    <label>
+                                        <input type=\"radio\" name=\"searchOption\" value=\"className\">
+                                        班级
+                                    </label>";
+                        }else if($option == "enterYear"){
+                            echo "<label>
+                                <input type=\"radio\" name=\"searchOption\" value=\"realName\">
+                                姓名
+                                </label>
+                                <label>
+                                    <input type=\"radio\" name=\"searchOption\" value=\"enterYear\" checked>
+                                    入学年份
+                                </label>
+                                <label>
+                                    <input type=\"radio\" name=\"searchOption\" value=\"className\">
+                                    班级
+                                </label>";
+                        }else if($option == "className"){
+                            echo "<label>
+                                <input type=\"radio\" name=\"searchOption\" value=\"realName\">
+                                姓名
+                                </label>
+                                <label>
+                                    <input type=\"radio\" name=\"searchOption\" value=\"enterYear\">
+                                    入学年份
+                                </label>
+                                <label>
+                                    <input type=\"radio\" name=\"searchOption\" value=\"className\" checked>
+                                    班级
+                                </label>";
+                        }
+                    ?>
                 </div>
             </div>
         </div>
     </form>
-    
 
     <?php
             include "connectDB.php";
@@ -84,8 +114,8 @@ $_SESSION["location"] = "query";
                         <td>姓名</td>
                         <td>身份证号</td>
                         <td>入学年月</td>
-                        <td>班级</td>
                         <td>手机</td>
+                        <td>班级</td>
                         <td>操作</td>
                         </tr>";
                     while($row = $result->fetch_assoc()){
