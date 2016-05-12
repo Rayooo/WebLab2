@@ -24,7 +24,6 @@ $_SESSION["location"] = "addUser";
 </head>
 <body>
     <?php  include "navi.php"; ?>
-
     <?php
 //    如果没有登陆,跳转
     if(!isset($_SESSION["userName"])){

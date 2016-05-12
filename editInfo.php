@@ -6,7 +6,7 @@
  * Time: 14:37
  */
 session_start();
-$_SESSION["location"] = "editInfo";
+$_SESSION["breadDetail"] = "edit";
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -54,7 +54,7 @@ $_SESSION["location"] = "editInfo";
                 <div class="form-group">
                     <label for="studentId" class="col-md-4 control-label">用户编号</label>
                     <div class= "col-md-8">
-                        <input type="text" id="studentId" name="studentId" class="form-control" placeholder="用户编号" value="<?php echo $studentId ?>">
+                        <input type="text" id="studentId" name="studentId" class="form-control" placeholder="用户编号" value="<?php echo $studentId ?>" readonly>
                     </div>
                 </div>
 

@@ -18,10 +18,9 @@ $studentId = $_REQUEST["studentId"];
 include "connectDB.php";
 $sql = "UPDATE students SET isUse=0 WHERE students.id=$studentId";
 if($connection->query($sql)===TRUE){
-    $url = 'editInfo.php?studentId='.$studentId;
     echo "<script language='javascript'>";
-    echo "alert('更新成功');";
-//    echo "location.href='$url'";
+    echo "alert('删除成功');";
+    echo "history.go(-1);";
     echo "</script>";
 }
 

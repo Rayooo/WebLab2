@@ -6,6 +6,7 @@
  * Time: 14:31
  */
 session_start();
+$_SESSION["breadDetail"] = "detailInfo";
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">

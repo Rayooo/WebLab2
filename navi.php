@@ -31,7 +31,7 @@
                             <li class = "naviButton" v-bind:class="{ 'active': isAddUser }"><a href="addUser.php">新增</a></li>
                             <li class = "naviButton" v-bind:class="{ 'active': isQuery }"><a href="query.php">查询</a></li>
                             <?php
-                            $isIndex = ("index"==$_SESSION["location"]||"editInfo"==$_SESSION["location"])? "true":"false";
+                            $isIndex = ("index"==$_SESSION["location"])? "true":"false";
                             $isAddUser = "addUser" == $_SESSION["location"]? "true":"false";
                             $isQuery = "query" ==  $_SESSION["location"]? "true":"false";
                             echo "<script>
@@ -57,3 +57,5 @@
         </div><!-- /.container-fluid -->
     </div>
 </nav>
+
+<?php include "bread.php"?>
