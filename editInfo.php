@@ -27,7 +27,7 @@ $_SESSION["breadDetail"] = "edit";
 
 <?php
 //    如果没有登陆,跳转
-    if(!isset($_SESSION["userName"]) && !isset($_REQUEST["studentId"])){
+    if(!isset($_SESSION["userName"]) && !isset($_REQUEST["studentId"]) || !$_SESSION["isAdmin"]){
         $url = 'index.php';
         echo "<script language='javascript'>";
         echo "location.href='$url'";

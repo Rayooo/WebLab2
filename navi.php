@@ -23,18 +23,19 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <?php
-                        if(isset($_SESSION["userName"]))
-                        {
-                    ?>
-                            <a type="button" class="btn btn-primary navbar-btn" href="logout.php" style="margin-left: 10px">退出</a>
-                            <li class = "naviButton" v-bind:class="{ 'active': isIndex }"><a href="index.php">主页</a></li>
-                            <li class = "naviButton" v-bind:class="{ 'active': isAddUser }"><a href="addUser.php">新增</a></li>
-                            <li class = "naviButton" v-bind:class="{ 'active': isQuery }"><a href="query.php">查询</a></li>
-                            <?php
-                            $isIndex = ("index"==$_SESSION["location"])? "true":"false";
-                            $isAddUser = "addUser" == $_SESSION["location"]? "true":"false";
-                            $isQuery = "query" ==  $_SESSION["location"]? "true":"false";
-                            echo "<script>
+                        if(isset($_SESSION["userName"])) {
+                            if ($_SESSION["isAdmin"]) {
+                                ?>
+                                <a type="button" class="btn btn-primary navbar-btn" href="logout.php"
+                                   style="margin-left: 10px">退出</a>
+                                <li class="naviButton" v-bind:class="{ 'active': isIndex }"><a href="index.php">主页</a></li>
+                                <li class="naviButton" v-bind:class="{ 'active': isAddUser }"><a href="addUser.php">新增</a></li>
+                                <li class="naviButton" v-bind:class="{ 'active': isQuery }"><a href="query.php">查询</a></li>
+                                <?php
+                                $isIndex = ("index" == $_SESSION["location"]) ? "true" : "false";
+                                $isAddUser = "addUser" == $_SESSION["location"] ? "true" : "false";
+                                $isQuery = "query" == $_SESSION["location"] ? "true" : "false";
+                                echo "<script>
                                     var vue = new Vue({
                                         el: '#bs-example-navbar-collapse-1',
                                         data: {
@@ -44,6 +45,27 @@
                                         }
                                     });
                                 </script>";
+                            }
+                            else{
+                                ?>
+                                <a type="button" class="btn btn-primary navbar-btn" href="logout.php"
+                                   style="margin-left: 10px">退出</a>
+                                <li class="naviButton" v-bind:class="{ 'active': isIndex }"><a href="index.php">主页</a></li>
+                                <li class="naviButton" v-bind:class="{ 'active': isQuery }"><a href="query.php">查询</a></li>
+                                <?php
+                                $isIndex = ("index" == $_SESSION["location"]) ? "true" : "false";
+                                $isAddUser = "addUser" == $_SESSION["location"] ? "true" : "false";
+                                $isQuery = "query" == $_SESSION["location"] ? "true" : "false";
+                                echo "<script>
+                                    var vue = new Vue({
+                                        el: '#bs-example-navbar-collapse-1',
+                                        data: {
+                                            isIndex: $isIndex,
+                                            isQuery: $isQuery
+                                        }
+                                    });
+                                </script>";
+                            }
                         }
                         else if($_SESSION["location"] == "login") {
                             echo '<a type="button" class="btn btn-primary navbar-btn" href="register.php">注册</a>';

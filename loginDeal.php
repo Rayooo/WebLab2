@@ -25,7 +25,7 @@
             while($row = $result->fetch_assoc()){
                 $_SESSION["userName"] = $row["adminName"];
                 $_SESSION["id"] = $row["id"];
-                $_SESSION["isAdmin"] = "true";
+                $_SESSION["isAdmin"] = 1;
             }
         }
         else{
@@ -40,7 +40,7 @@
                 $_SESSION["userName"] = $row["userName"];
                 $_SESSION["id"] = $row["id"];
                 $_SESSION["realName"] = $row["realName"];
-                $_SESSION["isAdmin"] = "false";
+                $_SESSION["isAdmin"] = 0;
             }
         }
         else{

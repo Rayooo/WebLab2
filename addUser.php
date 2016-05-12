@@ -26,7 +26,7 @@ $_SESSION["location"] = "addUser";
     <?php  include "navi.php"; ?>
     <?php
 //    如果没有登陆,跳转
-    if(!isset($_SESSION["userName"])){
+    if(!isset($_SESSION["userName"])||!$_SESSION["isAdmin"]){
         $url = 'login.php';
         echo "<script language='javascript'>";
         echo "location.href='$url'";

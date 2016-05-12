@@ -62,11 +62,17 @@ $_SESSION["location"] = "index";
                 echo "<td>".$row["enterYear"]."</td>";
                 echo "<td>".$row["mobile"]."</td>";
                 echo "<td>".$row["className"]."</td>";
-                echo "<td>
+                if($_SESSION["isAdmin"]){
+                    echo "<td>
                         <a href='studentInfo.php?studentId=$studentId' class='editButton'><i class='fa fa-info' aria-hidden='true'></i></a>
                         <a href='editInfo.php?studentId=$studentId' class='editButton'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>
                         <a href='deleteInfoDeal.php?studentId=$studentId' class='editButton'><i class='fa fa-trash-o' aria-hidden='true'></i></a>
                       </td>";
+                }else{
+                    echo "<td>
+                        <a href='studentInfo.php?studentId=$studentId' class='editButton'><i class='fa fa-info' aria-hidden='true'></i></a>
+                      </td>";
+                }
 //                echo "<td>".$row["address"]."</td>";
 //                echo "<td>".$row["zipcode"]."</td>";
 //                echo "<td>".$row["image"]."</td>";
