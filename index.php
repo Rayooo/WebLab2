@@ -39,7 +39,7 @@ $_SESSION["location"] = "index";
         <table class= 'table table-striped table-bordered table-hover'>
     <?php
         include "connectDB.php";
-        $sql = "SELECT *,students.id AS studentId FROM students JOIN classes ON (students.classId = classes.id);";
+        $sql = "SELECT *,students.id AS studentId FROM students JOIN classes ON (students.classId = classes.id) WHERE students.isUse=1";
         $result = $connection->query($sql);
         if($result->num_rows > 0){
             echo "<tr>
@@ -65,7 +65,7 @@ $_SESSION["location"] = "index";
                 echo "<td>
                         <a href='studentInfo.php?studentId=$studentId' class='editButton'><i class='fa fa-info' aria-hidden='true'></i></a>
                         <a href='editInfo.php?studentId=$studentId' class='editButton'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>
-                        <a href='deleteInfo.php?studentId=$studentId' class='editButton'><i class='fa fa-trash-o' aria-hidden='true'></i></a>
+                        <a href='deleteInfoDeal.php?studentId=$studentId' class='editButton'><i class='fa fa-trash-o' aria-hidden='true'></i></a>
                       </td>";
 //                echo "<td>".$row["address"]."</td>";
 //                echo "<td>".$row["zipcode"]."</td>";

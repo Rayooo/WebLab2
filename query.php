@@ -96,13 +96,13 @@ $_SESSION["location"] = "query";
             //如果request中有以下内容,不然会报错
             if(isset($_REQUEST["condition"]) && isset($_REQUEST["searchOption"])){
                 if($_REQUEST["searchOption"] == "realName"){
-                    $sql = "SELECT *,students.id AS studentId FROM students JOIN classes ON (students.classId = classes.id) WHERE realName='".$_REQUEST["condition"]."'";
+                    $sql = "SELECT *,students.id AS studentId FROM students JOIN classes ON (students.classId = classes.id) WHERE students.isUse=1 AND realName='".$_REQUEST["condition"]."'";
                 }
                 else if($_REQUEST["searchOption"] == "enterYear"){
-                    $sql = "SELECT *,students.id AS studentId FROM students JOIN classes ON (students.classId = classes.id) WHERE enterYear='".$_REQUEST["condition"]."'";
+                    $sql = "SELECT *,students.id AS studentId FROM students JOIN classes ON (students.classId = classes.id) WHERE students.isUse=1 AND enterYear='".$_REQUEST["condition"]."'";
                 }
                 else if($_REQUEST["searchOption"] == "className"){
-                    $sql = "SELECT *,students.id AS studentId FROM students JOIN classes ON (students.classId = classes.id) WHERE className='".$_REQUEST["condition"]."'";
+                    $sql = "SELECT *,students.id AS studentId FROM students JOIN classes ON (students.classId = classes.id) WHERE students.isUse=1 AND className='".$_REQUEST["condition"]."'";
                 }
                 $result = $connection -> query($sql);
                 if($result->num_rows > 0){
@@ -132,7 +132,7 @@ $_SESSION["location"] = "query";
                         echo "<td>
                             <a href='studentInfo.php?studentId=$studentId' class='editButton'><i class='fa fa-info' aria-hidden='true'></i></a>
                             <a href='editInfo.php?studentId=$studentId' class='editButton'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>
-                            <a href='deleteInfo.php?studentId=$studentId' class='editButton'><i class='fa fa-trash-o' aria-hidden='true'></i></a>
+                            <a href='deleteInfoDeal.php?studentId=$studentId' class='editButton'><i class='fa fa-trash-o' aria-hidden='true'></i></a>
                             </td>";
 //                      echo "<td>".$row["address"]."</td>";
 //                      echo "<td>".$row["zipcode"]."</td>";
