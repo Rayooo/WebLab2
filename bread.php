@@ -17,6 +17,9 @@
                 else if($_SESSION["location"] == "query"){
                     echo "首页>查询";
                 }
+                else if($_SESSION["location"] == "editMyInfo"){
+                    echo "首页>编辑我的信息";
+                }
             }
         ?>
     </p>

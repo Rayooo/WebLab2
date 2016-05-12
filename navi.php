@@ -32,7 +32,7 @@
                                 <li class="naviButton" v-bind:class="{ 'active': isAddUser }"><a href="addUser.php">新增</a></li>
                                 <li class="naviButton" v-bind:class="{ 'active': isQuery }"><a href="query.php">查询</a></li>
                                 <?php
-                                $isIndex = ("index" == $_SESSION["location"]) ? "true" : "false";
+                                $isIndex = "index" == $_SESSION["location"] ? "true" : "false";
                                 $isAddUser = "addUser" == $_SESSION["location"] ? "true" : "false";
                                 $isQuery = "query" == $_SESSION["location"] ? "true" : "false";
                                 echo "<script>
@@ -52,16 +52,18 @@
                                    style="margin-left: 10px">退出</a>
                                 <li class="naviButton" v-bind:class="{ 'active': isIndex }"><a href="index.php">主页</a></li>
                                 <li class="naviButton" v-bind:class="{ 'active': isQuery }"><a href="query.php">查询</a></li>
+                                <li class="naviButton" v-bind:class="{ 'active': isEditMyInfo }"><a href="editMyInfo.php">我的信息</a></li>
                                 <?php
-                                $isIndex = ("index" == $_SESSION["location"]) ? "true" : "false";
-                                $isAddUser = "addUser" == $_SESSION["location"] ? "true" : "false";
+                                $isIndex = "index" == $_SESSION["location"] ? "true" : "false";
+                                $isEditMyInfo = "editMyInfo" == $_SESSION["location"] ? "true" : "false";
                                 $isQuery = "query" == $_SESSION["location"] ? "true" : "false";
                                 echo "<script>
                                     var vue = new Vue({
                                         el: '#bs-example-navbar-collapse-1',
                                         data: {
                                             isIndex: $isIndex,
-                                            isQuery: $isQuery
+                                            isQuery: $isQuery,
+                                            isEditMyInfo: $isEditMyInfo
                                         }
                                     });
                                 </script>";

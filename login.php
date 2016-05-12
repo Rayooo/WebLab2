@@ -64,7 +64,7 @@ if(isset($_SESSION["userName"])){
         </form>
     </div> <!-- /container -->
     
-    
+    <?php include "footer.php"?>
     
     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

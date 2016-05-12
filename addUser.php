@@ -34,23 +34,41 @@ $_SESSION["location"] = "addUser";
     }
     ?>
 
+    <script>
+        function check() {
+            var mobile = document.getElementById("mobile").value;
+            var cardNo = document.getElementById("cardNo").value;
+            var canSubmit = true;
+            if(mobile && !/^1[0-9]{10}$/.test(mobile)){
+                canSubmit = false;
+            }
+            if(cardNo && !/^[0-9]{17}([0-9]|x)$/.test(cardNo)){
+                canSubmit = false;
+            }
+            if(!canSubmit){
+                alert("有信息填写错误")
+            }
+            return canSubmit;
+        }
+    </script>
+
     <div class="container">
-        <form class="form-register" action="addUserDeal.php" method="post" enctype="multipart/form-data">
+        <form class="form-register" onsubmit="return check();" action="addUserDeal.php" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-md-6">
 
                     <h2 class="form-signin-heading">新增校友</h2>
-                    <input type="text" id="userName" name="userName" class="form-control" placeholder="用户名" required autofocus>
-                    <input type="password" id="password" name="password" class="form-control" placeholder="密码" required>
-                    <input type="text" name="realName" class="form-control" placeholder="真实姓名" required>
-                    <input type="text" name="mobile" class="form-control" placeholder="手机" required>
-                    <input type="text" name="business" class="form-control" placeholder="工作单位" required>
-                    <input type="text" name="cardNo" class="form-control" placeholder="身份证号" required>
-                    <input type="text" name="address" class="form-control" placeholder="通讯地址" required>
-                    <input type="text" name="zipcode" class="form-control" placeholder="邮编" required>
+                    <input type="text" id="userName" name="userName" class="form-control" placeholder="用户名(必填)" required autofocus>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="密码(必填)" required>
+                    <input type="text" name="realName" class="form-control" placeholder="真实姓名(必填)" required>
+                    <input type="text" name="mobile" id="mobile" class="form-control" placeholder="手机" >
+                    <input type="text" name="business" class="form-control" placeholder="工作单位" >
+                    <input type="text" name="cardNo" id="cardNo" class="form-control" placeholder="身份证号" >
+                    <input type="text" name="address" class="form-control" placeholder="通讯地址" >
+                    <input type="text" name="zipcode" class="form-control" placeholder="邮编" >
                     <select name="enterYear" class="form-control" required>
                         <?php
-                            echo "<option value=''>请选择入学年份</option>";
+                            echo "<option value=''>请选择入学年份(必填)</option>";
                             for($i = 1900;$i <= date("Y");++$i){
                                 echo "<option value='$i'>$i</option>";
                             }
@@ -59,7 +77,7 @@ $_SESSION["location"] = "addUser";
                     <select name="classId" class="form-control" required>
                         <?php
                             include "connectDB.php";
-                            echo "<option value=''>请选择入校班级</option>";
+                            echo "<option value=''>请选择入校班级(必填)</option>";
                             $sql = "SELECT * FROM classes WHERE isUse=1";
                             $result = $connection->query($sql);
                             if($result->num_rows > 0){
@@ -76,7 +94,7 @@ $_SESSION["location"] = "addUser";
                     <div class="thumbnail">
                         <img id="preview" src="image/headImage.png" alt="..." >
                         <div class="caption">
-                           <input type="file" name="image" id="uploadImage" required>
+                           <input type="file" name="image" id="uploadImage" >
                         </div>
                 </div>
                 </div>

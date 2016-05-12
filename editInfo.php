@@ -59,21 +59,21 @@ $_SESSION["breadDetail"] = "edit";
                 </div>
 
                 <div class="form-group">
-                    <label for="userName" class="col-md-4 control-label">用户名</label>
+                    <label for="userName" class="col-md-4 control-label">用户名(必填)</label>
                     <div class= "col-md-8">
                         <input type="text" id="userName" name="userName" class="form-control" placeholder="用户名" value="<?php echo $row["userName"] ?>" required autofocus>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="password" class="col-md-4 control-label">密码</label>
+                    <label for="password" class="col-md-4 control-label">密码(必填)</label>
                     <div class= "col-md-8">
                         <input type="text" id="password" name="password" class="form-control" placeholder="密码" value="<?php echo $row["userPassword"] ?>">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="realName" class="col-md-4 control-label">真实姓名</label>
+                    <label for="realName" class="col-md-4 control-label">真实姓名(必填)</label>
                     <div class= "col-md-8">
                         <input type="text" id="realName" name="realName" class="form-control" placeholder="真实姓名" value="<?php echo $row["realName"] ?>">
                     </div>
@@ -115,7 +115,7 @@ $_SESSION["breadDetail"] = "edit";
                 </div>
 
                 <div class="form-group">
-                    <label for="enterYear" class="col-md-4 control-label">入学年份</label>
+                    <label for="enterYear" class="col-md-4 control-label">入学年份(必填)</label>
                     <div class= "col-md-8">
                         <select id="enterYear" name="enterYear" class="form-control" required>
                             <?php
@@ -132,7 +132,7 @@ $_SESSION["breadDetail"] = "edit";
                 </div>
 
                 <div class="form-group">
-                    <label for="className" class="col-md-4 control-label">班级名称</label>
+                    <label for="className" class="col-md-4 control-label">班级名称(必填)</label>
                     <div class= "col-md-8">
                         <select id="className" name="classId" class="form-control" required>
                             <?php
