@@ -32,3 +32,12 @@ h2{
     margin-top: 5%;
     margin-bottom: 5%;
 }
+
+.thumbnail{
+    margin-top: 5%;
+}
+
+.control-label{
+    margin-top: 4%;
+    font-size: larger;
+}

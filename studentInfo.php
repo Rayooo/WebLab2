@@ -44,27 +44,69 @@ $_SESSION["breadDetail"] = "detailInfo";
             $row = $result->fetch_assoc();
             ?>
             <div class="container">
-                <div class="row">
-                    <div class="col-md-6 text-center">
-                        <p>用户名:<?php echo $row["userName"] ?></p>
-                        <p>真实姓名:<?php echo $row["realName"] ?></p>
-                        <p>手机号:<?php echo $row["mobile"] ?></p>
-                        <p>工作单位:<?php echo $row["business"] ?></p>
-                        <p>身份证:<?php echo $row["cardNo"] ?></p>
-                        <p>地址:<?php echo $row["address"] ?></p>
-                        <p>邮编:<?php echo $row["zipcode"] ?></p>
-                        <p>入学年份:<?php echo $row["enterYear"] ?></p>
-                        <p>班级:<?php echo $row["className"] ?></p>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="thumbnail">
-                            <img id="preview" src="<?php echo $row["image"]?>" alt="...">
-                        </div>
+                <form class="form-register form-horizontal col-md-6">
+                <div class="form-group">
+                    <label for="realName" class="col-md-4 control-label">真实姓名</label>
+                    <div class= "col-md-8">
+                        <input type="text" id="realName" name="realName" class="form-control" value="<?php echo $row["realName"] ?>" readonly>
                     </div>
                 </div>
-            </div>
 
+                <div class="form-group">
+                    <label for="mobile" class="col-md-4 control-label">手机</label>
+                    <div class= "col-md-8">
+                        <input type="text" id="mobile" name="mobile" class="form-control" value="<?php echo $row["mobile"] ?>" readonly>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="business" class="col-md-4 control-label">工作单位</label>
+                    <div class= "col-md-8">
+                        <input type="text" id="business" name="business" class="form-control"  value="<?php echo $row["business"] ?>" readonly>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="cardNo" class="col-md-4 control-label">身份证号</label>
+                    <div class= "col-md-8">
+                        <input type="text" id="cardNo" name="cardNo" class="form-control"  value="<?php echo $row["cardNo"] ?>" readonly>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="address" class="col-md-4 control-label">通讯地址</label>
+                    <div class= "col-md-8">
+                        <input type="text" id="address" name="address" class="form-control"  value="<?php echo $row["address"] ?>" readonly>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="zipcode" class="col-md-4 control-label">邮编</label>
+                    <div class= "col-md-8">
+                        <input type="text" id="zipcode" name="zipcode" class="form-control"  value="<?php echo $row["zipcode"] ?>" readonly>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="enterYear" class="col-md-4 control-label">入学年份</label>
+                    <div class= "col-md-8">
+                        <input type="text" id="enterYear" name="enterYear" class="form-control"  value="<?php echo $row["enterYear"] ?>" readonly>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="className" class="col-md-4 control-label">班级名称</label>
+                    <div class= "col-md-8">
+                        <input type="text" id="className" name="className" class="form-control" value="<?php echo $row["className"] ?>" readonly>
+                    </div>
+                </div>
+                </form>
+
+                <div class="col-md-6">
+                    <div class="thumbnail">
+                        <img id="preview" src="<?php echo $row["image"]?>" alt="...">
+                    </div>
+                </div>
+
+            </div>
 
 <?php
         }

@@ -46,7 +46,7 @@ $_SESSION["location"] = "addUser";
                 canSubmit = false;
             }
             if(!canSubmit){
-                alert("有信息填写错误")
+                alert("身份证或手机号格式错误")
             }
             return canSubmit;
         }

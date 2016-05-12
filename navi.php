@@ -17,7 +17,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">校友通讯录</a>
+                <a class="navbar-brand" href="#"><i class="fa fa-graduation-cap" aria-hidden="true"></i>校友通讯录</a>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

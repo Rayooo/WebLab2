@@ -1,5 +1,34 @@
 Web Lab 2 Copyright Ray 2016
 
+这里因为限制了userName是unique,所以当注册相同用户名时,会报错
+
+上传图片时没截取一下,可以任意上传,本来应该要求截成正方形之类的
+
+当创建用户时,没上传图片时,查询用户时图片那栏没有显示默认头像
+
+查询信息后,点开edit,或者时info,如果直接点击浏览器的后退按钮,会提示表单重新提交,此处会有问题
+
+管理员可以增删改查用户的信息,管理员不支持改密码.
+
+用户只能查所有信息,改自己的信息
+
+
+这次代码写的实在是垃圾
+
+用到了Bootstrap,Vue.js和font-awesome
+
+Vue.js只用在了导航栏中按钮动态添加class,本来还能用在表单的自动检验上,没加....
+
+代码注释几乎没有,估计写过这一遍不会去看了
+
+封装函数没封装,scrip脚本全是写在php页面中(写的真垃圾)
+
+幸好不用后期维护...........
+
+没实现MVC简直是噩梦
+
+
+
 CREATE DATABASE WebLab2  CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 CREATE TABLE admins
@@ -67,6 +96,6 @@ INSERT INTO classes (className, specialityId, isUse) VALUES ("计算机143",1,1)
 INSERT INTO classes (className, specialityId, isUse) VALUES ("计算机144",1,1);
 
 INSERT INTO students (userName, userPassword, realName, cardNo, business, enterYear, classId, mobile, address, zipcode, image, isUse) VALUES
-("1","1","Ray","2014210834","business工作单位","2014",1,"12345678901","hangzhou","311222","http://rayooo.github.io/images/headImage.JPG",1);
+  ("1","1","Ray","339005111111111111","business工作单位","2014",1,"12345678901","hangzhou","311222","http://rayooo.github.io/images/headImage.JPG",1);
 INSERT INTO students (userName, userPassword, realName, cardNo, business, enterYear, classId, mobile, address, zipcode, image, isUse) VALUES
-  ("1","1","hhh","2014210834","business工作单位","2014",1,"12345678901","hangzhou","311222","http://rayooo.github.io/images/headImage.JPG",1);
+  ("2","2","hhh","339005222222222222","business工作单位","2014",1,"12345678901","hangzhou","311222","http://rayooo.github.io/images/headImage.JPG",1);

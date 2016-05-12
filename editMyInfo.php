@@ -45,9 +45,25 @@ else {
         $studentClassName = $row["className"];
         $imageUrl = $row["image"];
         ?>
-
+        <script>
+            function check() {
+                var mobile = document.getElementById("mobile").value;
+                var cardNo = document.getElementById("cardNo").value;
+                var canSubmit = true;
+                if(mobile && !/^1[0-9]{10}$/.test(mobile)){
+                    canSubmit = false;
+                }
+                if(cardNo && !/^[0-9]{17}([0-9]|x)$/.test(cardNo)){
+                    canSubmit = false;
+                }
+                if(!canSubmit){
+                    alert("身份证或手机号格式错误")
+                }
+                return canSubmit;
+            }
+        </script>
         <div class="container">
-            <form class="form-register form-horizontal" action="editInfoDeal.php" method="post" enctype="multipart/form-data">
+            <form class="form-register form-horizontal" onsubmit="return check()" action="editInfoDeal.php" method="post" enctype="multipart/form-data">
                 <!--        <div class="row">-->
                 <div class="col-md-6">
                     <h2 class="form-signin-heading">编辑信息</h2>
