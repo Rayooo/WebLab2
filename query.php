@@ -119,6 +119,7 @@ $_SESSION["location"] = "query";
                         <td>操作</td>
                         </tr>";
                     while($row = $result->fetch_assoc()){
+                        $studentId = $row["studentId"];
                         echo "<tr>";
                         echo "<td>".$row["studentId"]."</td>";
 //                      echo "<td>".$row["userName"]."</td>";
@@ -129,10 +130,10 @@ $_SESSION["location"] = "query";
                         echo "<td>".$row["mobile"]."</td>";
                         echo "<td>".$row["className"]."</td>";
                         echo "<td>
-                            <a href='#' class='editButton' style='margin-left: 5px;margin-right: 5px;'><i class='fa fa-info' aria-hidden='true'></i></a>
-                            <a href='#' class='editButton' style='margin-left: 5px;margin-right: 5px;'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>
-                            <a href='#' class='editButton' style='margin-left: 5px;margin-right: 5px;'><i class='fa fa-trash-o' aria-hidden='true'></i></a>
-                        </td>";
+                            <a href='studentInfo.php?studentId=$studentId' class='editButton'><i class='fa fa-info' aria-hidden='true'></i></a>
+                            <a href='editInfo.php?studentId=$studentId' class='editButton'><i class='fa fa-pencil-square-o' aria-hidden='true'></i></a>
+                            <a href='deleteInfo.php?studentId=$studentId' class='editButton'><i class='fa fa-trash-o' aria-hidden='true'></i></a>
+                            </td>";
 //                      echo "<td>".$row["address"]."</td>";
 //                      echo "<td>".$row["zipcode"]."</td>";
 //                      echo "<td>".$row["image"]."</td>";
