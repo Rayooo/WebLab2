@@ -50,7 +50,7 @@
                         $imageURL);
     
                     $sql = "UPDATE students SET userName='$userName',userPassword='$password',realName='$realName',mobile='$mobile',
-                            business='$business',cardNo='$business',address='$address',zipcode='$zipcode',enterYear='$enterYear',classId=$classId,image='$imageURL' WHERE students.id=$studentId";
+                            business='$business',cardNo='$cardNo',address='$address',zipcode='$zipcode',enterYear='$enterYear',classId=$classId,image='$imageURL' WHERE students.id=$studentId";
                     if($connection->query($sql)===TRUE){
                         $url = 'editInfo.php?studentId='.$studentId;
                         echo "<script language='javascript'>";
@@ -72,7 +72,7 @@
     
     }else{
         $sql = "UPDATE students SET userName='$userName',userPassword='$password',realName='$realName',mobile='$mobile',
-              business='$business',cardNo='$business',address='$address',zipcode='$zipcode',enterYear='$enterYear',classId=$classId WHERE students.id=$studentId";
+              business='$business',cardNo='$cardNo',address='$address',zipcode='$zipcode',enterYear='$enterYear',classId=$classId WHERE students.id=$studentId";
         if($connection->query($sql)===TRUE){
             $url = 'editInfo.php?studentId='.$studentId;
             echo "<script language='javascript'>";
