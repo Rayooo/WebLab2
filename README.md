@@ -19,7 +19,7 @@ Web Lab 2 Copyright Ray 2016
 
 Vue.js只用在了导航栏中按钮动态添加class,本来还能用在表单的自动检验上,没加....
 
-代码注释几乎没有,估计写过这一遍不会去看了
+代码注释几乎没有
 
 封装函数没封装,scrip脚本全是写在php页面中(写的真垃圾)
 
@@ -27,7 +27,7 @@ Vue.js只用在了导航栏中按钮动态添加class,本来还能用在表单�
 
 没实现MVC简直是噩梦
 
-
+以下是创建数据库语句
 
 CREATE DATABASE WebLab2  CHARACTER SET utf8 COLLATE utf8_general_ci;
 
@@ -96,6 +96,6 @@ INSERT INTO classes (className, specialityId, isUse) VALUES ("计算机143",1,1)
 INSERT INTO classes (className, specialityId, isUse) VALUES ("计算机144",1,1);
 
 INSERT INTO students (userName, userPassword, realName, cardNo, business, enterYear, classId, mobile, address, zipcode, image, isUse) VALUES
-  ("1","1","Ray","339005111111111111","business工作单位","2014",1,"12345678901","hangzhou","311222","http://rayooo.github.io/images/headImage.JPG",1);
+  ("1","1","Ray","339005111111111111","business工作单位","2014",1,"12345678901","hangzhou","311222","image/headImage.png",1);
 INSERT INTO students (userName, userPassword, realName, cardNo, business, enterYear, classId, mobile, address, zipcode, image, isUse) VALUES
-  ("2","2","hhh","339005222222222222","business工作单位","2014",1,"12345678901","hangzhou","311222","http://rayooo.github.io/images/headImage.JPG",1);
+  ("2","2","hhh","339005222222222222","business工作单位","2014",1,"12345678901","hangzhou","311222","image/headImage.png",1);
